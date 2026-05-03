@@ -3,56 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amrit Hotel | Royal Dining in Suratgarh</title>
+    <title>Amrit Hotel | VIP Dining</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font for a Royal, Elegant Look -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Main 3D Wrapper -->
-    <main class="perspective-wrapper">
-        
-        <!-- Hero Section -->
-        <header class="hero">
-            <div class="glass-panel tilt-element">
-                <h1 class="royal-title">Amrit Hotel</h1>
-                <p class="subtitle">Suratgarh's Premium VIP Dining Experience</p>
-                <div class="cta-container">
-                    <a href="https://wa.me/919680346002?text=Hello%20Amrit%20Hotel,%20I%20would%20like%20to%20place%20a%20VIP%20order!" class="btn-3d whatsapp-btn" target="_blank">
-                        <span class="btn-text">Order via WhatsApp</span>
-                    </a>
-                </div>
-            </div>
-        </header>
+    <!-- Sticky Navbar -->
+    <nav class="navbar glass-panel">
+        <div class="nav-container">
+            <!-- CSS Based Logo -->
+            <a href="#carousel" class="css-logo">
+                <span class="logo-letter">A</span>mrit
+                <span class="crown">♕</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#carousel">Specialties</a></li>
+                <li><a href="#order">Place Order</a></li>
+                <li><a href="#contacts">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <!-- Royal Menu Section -->
-        <section class="menu-section">
-            <h2 class="section-title">The Royal Menu</h2>
-            <div class="menu-grid">
-                <!-- Menu Items injected via HTML for SEO -->
-                <div class="menu-card tilt-element"><h3>Shahi Paneer</h3><div class="card-glow"></div></div>
-                <div class="menu-card tilt-element"><h3>Daal Makhani</h3><div class="card-glow"></div></div>
-                <div class="menu-card tilt-element"><h3>Tava Roti</h3><div class="card-glow"></div></div>
-                <div class="menu-card tilt-element"><h3>Butter Roti</h3><div class="card-glow"></div></div>
-                <div class="menu-card tilt-element"><h3>Paapad</h3><div class="card-glow"></div></div>
-                <div class="menu-card tilt-element"><h3>Salaad</h3><div class="card-glow"></div></div>
-                <div class="menu-card tilt-element"><h3>Curd</h3><div class="card-glow"></div></div>
-                <div class="menu-card tilt-element"><h3>Lassi</h3><div class="card-glow"></div></div>
-                <div class="menu-card tilt-element"><h3>Meethi Lassi</h3><div class="card-glow"></div></div>
-                <div class="menu-card tilt-element"><h3>Raita</h3><div class="card-glow"></div></div>
-                <div class="menu-card tilt-element"><h3>Rice</h3><div class="card-glow"></div></div>
+    <main>
+        <!-- Section 1: 3D Carousel (Right to Left) -->
+        <section id="carousel" class="section-container">
+            <h2 class="section-title">Our Royal Specialties</h2>
+            <div class="carousel-wrapper">
+                <div class="carousel-track">
+                    <!-- Carousel Items (Duplicated for infinite scroll) -->
+                    <div class="carousel-card"><h3>Shahi Paneer</h3></div>
+                    <div class="carousel-card"><h3>Daal Makhani</h3></div>
+                    <div class="carousel-card"><h3>Special Lassi</h3></div>
+                    <div class="carousel-card"><h3>Premium Raita</h3></div>
+                    <div class="carousel-card"><h3>Shahi Paneer</h3></div>
+                    <div class="carousel-card"><h3>Daal Makhani</h3></div>
+                    <div class="carousel-card"><h3>Special Lassi</h3></div>
+                    <div class="carousel-card"><h3>Premium Raita</h3></div>
+                </div>
             </div>
         </section>
 
-    </main>
+        <!-- Section 2: Order Form -->
+        <section id="order" class="section-container">
+            <h2 class="section-title">Craft Your Royal Meal</h2>
+            <div class="glass-panel form-container">
+                <form id="whatsapp-form">
+                    
+                    <div class="menu-category">
+                        <h3 class="category-title">Sabzi (Curries)</h3>
+                        <!-- Sabzi Item with Half/Full Select -->
+                        <div class="menu-item">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="foodItem" value="Shahi Paneer">
+                                <span class="checkmark"></span> Shahi Paneer
+                            </label>
+                            <select class="qty-select" id="qty-Shahi-Paneer">
+                                <option value="Half">Half</option>
+                                <option value="Full">Full</option>
+                            </select>
+                        </div>
+                        <div class="menu-item">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="foodItem" value="Daal Makhani">
+                                <span class="checkmark"></span> Daal Makhani
+                            </label>
+                            <select class="qty-select" id="qty-Daal-Makhani">
+                                <option value="Half">Half</option>
+                                <option value="Full">Full</option>
+                            </select>
+                        </div>
+                    </div>
 
-    <!-- Floating 3D WhatsApp Button -->
-    <a href="https://wa.me/919680346002?text=Hello!" class="floating-wa" target="_blank">
-        <svg viewBox="0 0 32 32" class="wa-icon">
-            <path d="M16 2.004c-7.72 0-14 6.281-14 14.004 0 2.454.636 4.845 1.841 6.953L2.348 29.5l6.702-1.758A13.93 13.93 0 0016 30.012c7.72 0 14-6.281 14-14.004S23.72 2.004 16 2.004zm7.986 20.183c-.332.937-1.921 1.802-2.656 1.933-.687.121-1.554.218-4.664-1.07-3.742-1.547-6.175-5.383-6.363-5.633-.187-.25-1.523-2.023-1.523-3.863s.961-2.738 1.304-3.113c.343-.375.749-.469.999-.469.25 0 .5.004.718.016.234.012.55.106.843.816.312.75 1.062 2.594 1.156 2.781.094.187.156.406.031.656-.125.25-.187.406-.375.625-.187.219-.39.484-.562.672-.187.203-.39.422-.172.797.219.375.972 1.605 2.085 2.597 1.437 1.281 2.636 1.676 3.011 1.863.375.187.593.156.812-.094.219-.25.937-1.094 1.187-1.469.25-.375.5-.312.843-.187.344.125 2.187 1.031 2.562 1.219.375.187.625.281.718.438.094.156.094.906-.238 1.843z"/>
-        </svg>
-    </a>
+                    <div class="menu-category">
+                        <h3 class="category-title">Breads & Accompaniments</h3>
+                        <!-- Other Items with Number Input -->
+                        <div class="menu-item">
+                            <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Tava Roti"><span class="checkmark"></span> Tava Roti</label>
+                            <input type="number" class="qty-number" id="qty-Tava-Roti" min="1" value="1">
+                        </div>
+                        <div class="menu-item">
+                            <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Butter Roti"><span class="checkmark"></span> Butter Roti</label>
+                            <input type="number" class="qty-number" id="qty-Butter-Roti" min="1" value="1">
+                        </div>
+                        <div class="menu-item">
+                            <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Rice"><span class="checkmark"></span> Rice</label>
+                            <input type="number" class="qty-number" id="qty-Rice" min="1" value="1">
+                        </div>
+                        <div class="menu-item">
+                            <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Paapad"><span class="checkmark"></span> Paapad</label>
+                            <input type="number" class="qty-number" id="qty-Paapad" min="1" value="1">
+                        </div>
+                        <div class="menu-item">
+                            <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Salaad"><span class="checkmark"></span> Salaad</label>
+                            <input type="number" class="qty-number" id="qty-Salaad" min="1" value="1">
+                        </div>
+                    </div>
+
+                    <div class="menu-category">
+                        <h3 class="category-title">Beverages & Dairy</h3>
+                        <div class="menu-item">
+                            <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Curd"><span class="checkmark"></span> Curd</label>
+                            <input type="number" class="qty-number" id="qty-Curd" min="1" value="1">
+                        </div>
+                        <div class="menu-item">
+                            <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Lassi"><span class="checkmark"></span> Lassi</label>
+                            <input type="number" class="qty-number" id="qty-Lassi" min="1" value="1">
+                        </div>
+                        <div class="menu-item">
+                            <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Meethi Lassi"><span class="checkmark"></span> Meethi Lassi</label>
+                            <input type="number" class="qty-number" id="qty-Meethi-Lassi" min="1" value="1">
+                        </div>
+                        <div class="menu-item">
+                            <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Raita"><span class="checkmark"></span> Raita</label>
+                            <input type="number" class="qty-number" id="qty-Raita" min="1" value="1">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-3d whatsapp-btn" style="width: 100%; margin-top: 2rem;">
+                        <span class="btn-text">Send Order to WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Section 3: Contacts -->
+        <section id="contacts" class="section-container">
+            <div class="glass-panel contact-card">
+                <!-- Reusing CSS Logo -->
+                <div class="contact-logo">
+                    <div class="css-logo" style="font-size: 3rem;">
+                        <span class="logo-letter">A</span>mrit
+                        <span class="crown">♕</span>
+                    </div>
+                    <p>Suratgarh, Rajasthan</p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://wa.me/919680346002" class="social-btn" target="_blank">WhatsApp</a>
+                    <a href="#" class="social-btn">Instagram</a>
+                    <a href="#" class="social-btn">Facebook</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
