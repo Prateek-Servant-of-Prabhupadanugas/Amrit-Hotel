@@ -1,29 +1,50 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const tiltElements = document.querySelectorAll('.tilt-element');
+    const form = document.getElementById('whatsapp-form');
 
-    tiltElements.forEach(element => {
-        element.addEventListener('mousemove', (e) => {
-            const rect = element.getBoundingClientRect();
-            // Calculate mouse position relative to the center of the element
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-            // Adjust the divisor to increase/decrease the intensity of the 3D tilt
-            const tiltX = (y / rect.height) * -20; 
-            const tiltY = (x / rect.width) * 20;
+        // Base message
+        let orderMessage = "Greetings Amrit Hotel, I would like to place a VIP order:\n\n";
+        let hasItems = false;
 
-            element.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
+        // Get all checked checkboxes
+        const checkedItems = document.querySelectorAll('input[name="foodItem"]:checked');
+
+        checkedItems.forEach(item => {
+            hasItems = true;
+            const itemName = item.value;
+            
+            // Reformat item name to match the ID of the quantity input (e.g., "Shahi Paneer" -> "qty-Shahi-Paneer")
+            const idFormattedName = itemName.replace(/\s+/g, '-');
+            const qtyElement = document.getElementById(`qty-${idFormattedName}`);
+            
+            let quantity = "1"; // Default fallback
+            if (qtyElement) {
+                quantity = qtyElement.value;
+            }
+
+            // Append to the WhatsApp message text
+            orderMessage += `• ${itemName} - Qty/Size: ${quantity}\n`;
         });
 
-        // Reset the element when the mouse leaves
-        element.addEventListener('mouseleave', () => {
-            element.style.transform = `rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-            element.style.transition = `transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
-        });
+        if (!hasItems) {
+            alert("Please select at least one item from the royal menu to place an order.");
+            return;
+        }
 
-        // Remove the transition while moving so the tilt is instantly responsive
-        element.addEventListener('mouseenter', () => {
-            element.style.transition = `none`;
-        });
+        orderMessage += "\nThank you!";
+
+        // Encode the string for a URL
+        const encodedMessage = encodeURIComponent(orderMessage);
+        
+        // Hotel's WhatsApp Number
+        const whatsappNumber = "919680346002"; 
+        
+        // Create the final link
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+        // Open WhatsApp in a new tab
+        window.open(whatsappURL, '_blank');
     });
 });
