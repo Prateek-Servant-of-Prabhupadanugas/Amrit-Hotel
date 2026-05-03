@@ -11,17 +11,14 @@
     scroll-behavior: smooth;
     
 }
-html, body {
-    width: 100%;
-    overflow-x: hidden;
-    
-}
+
 body {
     background-color: var(--bg-dark);
     background-image: radial-gradient(circle at 50% 10%, #1a1a2e 0%, #050508 100%);
     color: #fff;
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
+    overflow-x : hidden ; 
 }
 
 /* --- RESPONSIVE NAVBAR --- */
