@@ -5,37 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amrit Hotel | VIP Dining</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-    <!-- Sticky Navbar -->
-    <nav class="navbar glass-panel">
+    <nav class="navbar">
         <div class="nav-container">
-            <!-- CSS Based Logo -->
             <a href="#carousel" class="css-logo">
-                <span class="logo-letter">A</span>mrit
-                <span class="crown">♕</span>
+                <span class="logo-letter">A</span>mrit<span class="crown">♕</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#carousel">Specialties</a></li>
-                <li><a href="#order">Place Order</a></li>
-                <li><a href="#contacts">Contact Us</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#contacts">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
-        <!-- Section 1: 3D Carousel (Right to Left) -->
+        <!-- Section 1: Carousel -->
         <section id="carousel" class="section-container">
-            <h2 class="section-title">Our Royal Specialties</h2>
+            <h2 class="section-title">Royal Specialties</h2>
             <div class="carousel-wrapper">
                 <div class="carousel-track">
-                    <!-- Carousel Items (Duplicated for infinite scroll) -->
                     <div class="carousel-card"><h3>Shahi Paneer</h3></div>
                     <div class="carousel-card"><h3>Daal Makhani</h3></div>
                     <div class="carousel-card"><h3>Special Lassi</h3></div>
                     <div class="carousel-card"><h3>Premium Raita</h3></div>
+                    <!-- Cloned for loop -->
                     <div class="carousel-card"><h3>Shahi Paneer</h3></div>
                     <div class="carousel-card"><h3>Daal Makhani</h3></div>
                     <div class="carousel-card"><h3>Special Lassi</h3></div>
@@ -46,13 +46,15 @@
 
         <!-- Section 2: Order Form -->
         <section id="order" class="section-container">
-            <h2 class="section-title">Craft Your Royal Meal</h2>
+            <h2 class="section-title">Digital Concierge</h2>
             <div class="glass-panel form-container">
                 <form id="whatsapp-form">
                     
                     <div class="menu-category">
-                        <h3 class="category-title">Sabzi (Curries)</h3>
-                        <!-- Sabzi Item with Half/Full Select -->
+                        <div class="cat-header">
+                            <i data-lucide="utensils" class="icon-gold"></i>
+                            <h3 class="category-title">Sabzi</h3>
+                        </div>
                         <div class="menu-item">
                             <label class="checkbox-container">
                                 <input type="checkbox" name="foodItem" value="Shahi Paneer">
@@ -76,8 +78,10 @@
                     </div>
 
                     <div class="menu-category">
-                        <h3 class="category-title">Breads & Accompaniments</h3>
-                        <!-- Other Items with Number Input -->
+                        <div class="cat-header">
+                            <i data-lucide="wheat" class="icon-gold"></i>
+                            <h3 class="category-title">Sides & Breads</h3>
+                        </div>
                         <div class="menu-item">
                             <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Tava Roti"><span class="checkmark"></span> Tava Roti</label>
                             <input type="number" class="qty-number" id="qty-Tava-Roti" min="1" value="1">
@@ -86,42 +90,10 @@
                             <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Butter Roti"><span class="checkmark"></span> Butter Roti</label>
                             <input type="number" class="qty-number" id="qty-Butter-Roti" min="1" value="1">
                         </div>
-                        <div class="menu-item">
-                            <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Rice"><span class="checkmark"></span> Rice</label>
-                            <input type="number" class="qty-number" id="qty-Rice" min="1" value="1">
-                        </div>
-                        <div class="menu-item">
-                            <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Paapad"><span class="checkmark"></span> Paapad</label>
-                            <input type="number" class="qty-number" id="qty-Paapad" min="1" value="1">
-                        </div>
-                        <div class="menu-item">
-                            <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Salaad"><span class="checkmark"></span> Salaad</label>
-                            <input type="number" class="qty-number" id="qty-Salaad" min="1" value="1">
-                        </div>
                     </div>
 
-                    <div class="menu-category">
-                        <h3 class="category-title">Beverages & Dairy</h3>
-                        <div class="menu-item">
-                            <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Curd"><span class="checkmark"></span> Curd</label>
-                            <input type="number" class="qty-number" id="qty-Curd" min="1" value="1">
-                        </div>
-                        <div class="menu-item">
-                            <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Lassi"><span class="checkmark"></span> Lassi</label>
-                            <input type="number" class="qty-number" id="qty-Lassi" min="1" value="1">
-                        </div>
-                        <div class="menu-item">
-                            <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Meethi Lassi"><span class="checkmark"></span> Meethi Lassi</label>
-                            <input type="number" class="qty-number" id="qty-Meethi-Lassi" min="1" value="1">
-                        </div>
-                        <div class="menu-item">
-                            <label class="checkbox-container"><input type="checkbox" name="foodItem" value="Raita"><span class="checkmark"></span> Raita</label>
-                            <input type="number" class="qty-number" id="qty-Raita" min="1" value="1">
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn-3d whatsapp-btn" style="width: 100%; margin-top: 2rem;">
-                        <span class="btn-text">Send Order to WhatsApp</span>
+                    <button type="submit" class="btn-3d">
+                        <i data-lucide="send"></i> Send Order to WhatsApp
                     </button>
                 </form>
             </div>
@@ -130,24 +102,20 @@
         <!-- Section 3: Contacts -->
         <section id="contacts" class="section-container">
             <div class="glass-panel contact-card">
-                <!-- Reusing CSS Logo -->
-                <div class="contact-logo">
-                    <div class="css-logo" style="font-size: 3rem;">
-                        <span class="logo-letter">A</span>mrit
-                        <span class="crown">♕</span>
-                    </div>
-                    <p>Suratgarh, Rajasthan</p>
+                <div class="css-logo" style="font-size: 3rem; margin-bottom: 2rem;">
+                    <span class="logo-letter">A</span>mrit<span class="crown">♕</span>
                 </div>
                 
                 <div class="social-links">
-                    <a href="https://wa.me/919680346002" class="social-btn" target="_blank">WhatsApp</a>
-                    <a href="#" class="social-btn">Instagram</a>
-                    <a href="#" class="social-btn">Facebook</a>
+                    <a href="https://wa.me/919680346002" class="social-btn"><i data-lucide="phone"></i> WhatsApp</a>
+                    <a href="#" class="social-btn"><i data-lucide="instagram"></i> Instagram</a>
+                    <a href="#" class="social-btn"><i data-lucide="map-pin"></i> Suratgarh</a>
                 </div>
             </div>
         </section>
     </main>
 
     <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
