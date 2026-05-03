@@ -21,34 +21,48 @@ body {
 }
 
 /* --- RESPONSIVE NAVBAR --- */
+/* --- UPDATED NAVBAR CSS --- */
 .navbar {
     position: fixed;
-    top: 0; width: 100%;
-    background: rgba(5, 5, 8, 0.8);
-    backdrop-filter: blur(10px);
-    z-index: 2000;
-    border-bottom: 1px solid var(--glass-border);
+    top: 0;
+    left: 0; /* Explicitly set left/right to prevent width issues */
+    right: 0;
+    width: 100%;
+    
+    /* Ensure it is ABOVE all 3D transforms */
+    z-index: 9999; 
+    
+    /* Glassmorphism setup */
+    background: rgba(10, 10, 15, 0.75);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    
+    /* This prevents the navbar from tilting with the 3D wrapper */
+    transform: translateZ(1000px); 
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5%;
+    padding: 1rem 5%;
     max-width: 1400px;
     margin: 0 auto;
+    height: 70px; /* Fixed height for consistency */
 }
 
-.nav-links {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-}
-
+/* Ensure links are clickable and bright */
 .nav-links a {
-    color: #fff; text-decoration: none; font-size: 0.9rem;
-    text-transform: uppercase; letter-spacing: 1px;
-    transition: 0.3s;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--royal-gold);
+    transform: translateY(-2px);
 }
 
 /* --- CAROUSEL (Mobile Friendly) --- */
