@@ -9,8 +9,13 @@
 * {
     margin: 0; padding: 0; box-sizing: border-box;
     scroll-behavior: smooth;
+    
 }
-
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
 body {
     background-color: var(--bg-dark);
     background-image: radial-gradient(circle at 50% 10%, #1a1a2e 0%, #050508 100%);
